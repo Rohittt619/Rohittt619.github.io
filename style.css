@@ -1547,6 +1547,39 @@ footer p {
     filter: drop-shadow(var(--glow-primary));
 }
 
+/* Contact Template Buttons */
+.template-btns {
+    display: flex;
+    gap: 0.8rem;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.template-btn {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    padding: 0.5rem 1.1rem;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.template-btn:hover {
+    background: rgba(0, 242, 254, 0.05);
+    border-color: var(--primary);
+    color: #fff;
+}
+
+.template-btn.active {
+    background: linear-gradient(135deg, rgba(0, 242, 254, 0.15) 0%, rgba(79, 172, 254, 0.15) 100%);
+    border-color: var(--primary);
+    color: var(--primary);
+    box-shadow: var(--glow-primary);
+}
+
 /* Responsive Styles */
 @media (max-width: 1024px) {
     .hero-container {
