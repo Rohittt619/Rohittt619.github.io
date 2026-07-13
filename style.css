@@ -438,6 +438,7 @@ header.scrolled {
     filter: blur(40px);
     opacity: 0.4;
     mix-blend-mode: screen;
+    animation: float-orb 12s infinite alternate ease-in-out;
 }
 
 .primary-orb {
@@ -489,6 +490,7 @@ header.scrolled {
     background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    animation: float 4s infinite ease-in-out;
 }
 
 .orb-ring {
@@ -499,6 +501,7 @@ header.scrolled {
     bottom: -20px;
     border: 2px dashed rgba(0, 242, 254, 0.4);
     border-radius: 50%;
+    animation: rotate 20s infinite linear;
 }
 
 .orb-ring.secondary {
@@ -507,6 +510,7 @@ header.scrolled {
     right: -40px;
     bottom: -40px;
     border: 1px solid rgba(79, 172, 254, 0.2);
+    animation: rotate 30s infinite linear reverse;
 }
 
 @keyframes float-orb {
