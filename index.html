@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rohit Rathod | Portfolio - Aspiring Data Analyst</title>
-    <meta name="description" content="Portfolio of Rohit Rathod, an Aspiring Data Analyst with expertise in SQL, Python, Power BI, and Machine Learning.">
+    <title>Rohit Rathod | Portfolio - Data Analyst</title>
+    <meta name="description" content="Portfolio of Rohit Rathod, a Data Analyst with expertise in SQL, Python, Power BI, and Machine Learning.">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,9 +21,6 @@
     <!-- Header / Navigation -->
     <header>
         <div class="nav-container">
-            <a href="#" class="logo">
-                <span class="logo-accent">&lt;</span>Rohit<span class="logo-accent">.</span>Rathod<span class="logo-accent"> /&gt;</span>
-            </a>
             <nav class="nav-menu">
                 <a href="#about" class="nav-link">About</a>
                 <a href="#skills" class="nav-link">Skills</a>
@@ -56,7 +53,6 @@
     <section class="hero" id="home">
         <div class="hero-container">
             <div class="hero-content">
-                <div class="badge">Available for Junior Data Analyst Roles</div>
                 <h1 class="hero-title">
                     Hi, I'm <span class="highlight">Rohit Rathod</span>
                 </h1>
@@ -72,7 +68,7 @@
                 </div>
                 <div class="social-links">
                     <a href="https://github.com/Rohittt619" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-                    <a href="https://linkedin.com/in/rohit-rathod-" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://www.linkedin.com/in/rohit-rathod-19442a228" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                     <a href="mailto:rrathod1101@gmail.com" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
                 </div>
             </div>
@@ -103,7 +99,7 @@
             <div class="about-grid">
                 <div class="about-text">
                     <p class="lead">
-                        I am a detail-oriented Data Science graduate with a CGPA of 8.29, combining solid theoretical knowledge with hands-on technical skills.
+                        I am a detail-oriented Data Science graduate combining solid theoretical knowledge with hands-on technical skills.
                     </p>
                     <p>
                         My journey in data science has taught me that data is only as good as the decisions it enables. Through my academic coursework, personal projects, and developer internships, I have focused on building end-to-end analytical solutions—from writing Python scripts that clean messy web data, to structuring relational tables in SQL databases, and designing intuitive dashboard layouts in Power BI that tell a clear business story.
@@ -113,8 +109,8 @@
                     </p>
                     <div class="about-stats">
                         <div class="stat-card">
-                            <span class="stat-number" data-target="8.29">0</span>
-                            <span class="stat-label">CGPA (B.Tech IT)</span>
+                            <span class="stat-number" data-target="2">0</span>
+                            <span class="stat-label">Deployed Web Apps</span>
                         </div>
                         <div class="stat-card">
                             <span class="stat-number" data-target="30">0</span><span class="stat-suffix">%</span>
@@ -156,14 +152,6 @@
                 <div class="section-underline"></div>
             </div>
             <div class="skills-grid">
-                <div class="skills-sphere-container">
-                    <h3>Interactive 3D Skills Sphere</h3>
-                    <p class="skills-sphere-subtext">Click and drag to rotate the sphere or hover to inspect specific skills.</p>
-                    <div class="canvas-wrapper">
-                        <!-- Canvas for 3D Tag Cloud -->
-                        <canvas id="skills-cloud-canvas" width="400" height="400"></canvas>
-                    </div>
-                </div>
                 <div class="skills-categories">
                     <div class="skills-category">
                         <h4 class="category-title"><i class="fa-solid fa-laptop-code"></i> Languages & Frameworks</h4>
@@ -448,16 +436,27 @@
                     
                     <!-- Churn View -->
                     <div class="dashboard-view" id="churn-view">
+                        <div class="sandbox-controls-row">
+                            <div class="slider-container">
+                                <span class="slider-label">Classification Decision Threshold: <strong id="threshold-val">0.50</strong></span>
+                                <input type="range" id="churn-threshold-slider" min="0.10" max="0.90" step="0.05" value="0.50" class="sandbox-slider">
+                            </div>
+                            <div class="slider-info">
+                                <i class="fa-solid fa-circle-info"></i>
+                                <span>Adjusting the ML threshold affects which customers are flagged as "At-Risk" of churning.</span>
+                            </div>
+                        </div>
+
                         <div class="kpi-row">
                             <div class="kpi-card-mini">
                                 <span class="kpi-title">Active Customers</span>
-                                <span class="kpi-value">12,450</span>
-                                <span class="kpi-indicator positive"><i class="fa-solid fa-arrow-trend-up"></i> +5.2% MoM</span>
+                                <span class="kpi-value" id="kpi-active-cust">12,450</span>
+                                <span class="kpi-indicator positive" id="kpi-active-indicator"><i class="fa-solid fa-arrow-trend-up"></i> +5.2% MoM</span>
                             </div>
                             <div class="kpi-card-mini text-warning-glow">
                                 <span class="kpi-title">Overall Churn Rate</span>
-                                <span class="kpi-value">18.2%</span>
-                                <span class="kpi-indicator negative"><i class="fa-solid fa-arrow-trend-up"></i> +1.4% Churn</span>
+                                <span class="kpi-value" id="kpi-churn-rate">18.2%</span>
+                                <span class="kpi-indicator negative" id="kpi-churn-indicator"><i class="fa-solid fa-arrow-trend-up"></i> +1.4% Churn</span>
                             </div>
                             <div class="kpi-card-mini">
                                 <span class="kpi-title">Model Churn ROC-AUC</span>
@@ -492,8 +491,8 @@
                                         <path d="M 40 170 C 120 170, 160 30, 220 30 C 280 30, 320 150, 480 170" fill="none" class="chart-curve anim-path"></path>
                                         
                                         <!-- Threshold line -->
-                                        <line x1="320" y1="20" x2="320" y2="170" stroke="#ff4757" stroke-dasharray="4" stroke-width="2"></line>
-                                        <text x="330" y="35" fill="#ff4757" font-size="10px" font-weight="600">Churn Threshold (0.5)</text>
+                                        <line id="threshold-line" x1="260" y1="20" x2="260" y2="170" stroke="#ff4757" stroke-dasharray="4" stroke-width="2"></line>
+                                        <text id="threshold-text" x="270" y="35" fill="#ff4757" font-size="10px" font-weight="600">Threshold (0.50)</text>
                                         
                                         <!-- X Axis Labels -->
                                         <text x="60" y="192" class="chart-text text-center">0.0 (Safe)</text>
@@ -564,7 +563,7 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <h3>Data Science Intern</h3>
-                        <span class="timeline-company">Pune, Maharashtra (NLP & Sentiment Focus)</span>
+                        <span class="timeline-company">(NLP & Sentiment Focus)</span>
                         <p class="timeline-desc">
                             Designed and deployed sentiment-analysis pipeline processing 1,000+ social media feedback records using Python, TF-IDF, SVM, and Logistic Regression. Performed text tokenization, lemmatization, and stop-word removal, improving classification accuracy to 85% and significantly reducing noise in operational data.
                         </p>
@@ -576,7 +575,7 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <h3>Python Developer Intern</h3>
-                        <span class="timeline-company">Pune, Maharashtra (Automation & Pipelines)</span>
+                        <span class="timeline-company">(Automation & Pipelines)</span>
                         <p class="timeline-desc">
                             Automated repetitive reporting workflows and spreadsheet consolidation using Python (Pandas/NumPy) and SQL, reducing manual data-processing cycles by 30%. Built reusable preprocessing pipelines to clean structured datasets, handle outliers, and containerized an object-detection model using YOLOv5 and Docker for local deployment test environments.
                         </p>
@@ -604,15 +603,15 @@
                     <ul class="cert-list">
                         <li>
                             <span class="cert-title">SQL for Data Science</span>
-                            <span class="cert-issuer">UC Davis (Coursera)</span>
+                            <span class="cert-issuer">UC Davis</span>
                         </li>
                         <li>
                             <span class="cert-title">Databases & SQL with Python</span>
-                            <span class="cert-issuer">IBM (Coursera)</span>
+                            <span class="cert-issuer">IBM</span>
                         </li>
                         <li>
                             <span class="cert-title">Excel Skills for Business</span>
-                            <span class="cert-issuer">Macquarie University (Coursera)</span>
+                            <span class="cert-issuer">Macquarie University</span>
                         </li>
                         <li>
                             <span class="cert-title">AWS Cloud Fundamentals</span>
@@ -636,7 +635,7 @@
             <div class="contact-grid">
                 <div class="contact-info">
                     <h3>Let's collaborate!</h3>
-                    <p>I am actively seeking Junior Data Analyst roles in Pune, Mumbai, or remote positions. If you'd like to discuss a project, interview, or just chat about data, feel free to reach out.</p>
+                    <p>I am actively seeking Data Analyst or remote positions. If you'd like to discuss a project, interview, or just chat about data, feel free to reach out.</p>
                     
                     <div class="contact-details">
                         <div class="contact-detail-item">
@@ -647,17 +646,17 @@
                             </div>
                         </div>
                         <div class="contact-detail-item">
+                            <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
+                            <div>
+                                <span>Location</span>
+                                <p>Open to Relocation / Remote</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail-item">
                             <div class="icon-box"><i class="fa-solid fa-phone"></i></div>
                             <div>
                                 <span>Call Me</span>
                                 <a href="tel:+917710897843">+91 7710897843</a>
-                            </div>
-                        </div>
-                        <div class="contact-detail-item">
-                            <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
-                            <div>
-                                <span>Location</span>
-                                <p>Pune & Mumbai, Maharashtra, India</p>
                             </div>
                         </div>
                     </div>
@@ -691,7 +690,7 @@
             <p class="footer-design">Designed & Built with <i class="fa-solid fa-heart" style="color: #ff4757;"></i> for Data Excellence.</p>
             <div class="social-links footer-socials">
                 <a href="https://github.com/Rohittt619" target="_blank"><i class="fa-brands fa-github"></i></a>
-                <a href="https://linkedin.com/in/rohit-rathod-" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://www.linkedin.com/in/rohit-rathod-19442a228" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
                 <a href="mailto:rrathod1101@gmail.com"><i class="fa-regular fa-envelope"></i></a>
             </div>
         </div>

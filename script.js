@@ -192,172 +192,81 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==========================================
-    // 4. Interactive 3D Skills Sphere (Tag Cloud)
+    // 4. Sandbox Threshold Slider Interaction
     // ==========================================
-    const skillsCanvas = document.getElementById('skills-cloud-canvas');
-    if (skillsCanvas) {
-        const sCtx = skillsCanvas.getContext('2d');
-        const skillList = [
-            'SQL', 'Python', 'Power BI', 'DAX', 'Pandas', 'NumPy',
-            'MySQL', 'PostgreSQL', 'Scikit-learn', 'Excel', 'Docker',
-            'Git', 'GitHub', 'AWS', 'Azure', 'Bash', 'EDA', 'NLP',
-            'Regression', 'Clustering', 'Classification', 'ETL'
-        ];
-        
-        let tags = [];
-        const radius = 150;
-        let angleX = 0.003;
-        let angleY = 0.003;
-        let isDragging = false;
-        let lastMouseX = 0;
-        let lastMouseY = 0;
-        
-        // Define tag object structure
-        class Tag {
-            constructor(text, x, y, z) {
-                this.text = text;
-                this.x = x;
-                this.y = y;
-                this.z = z;
-                this.color = 'hsla(' + (180 + Math.random() * 40) + ', 100%, 75%, 1)'; // glow cyans
+    const thresholdSlider = document.getElementById('churn-threshold-slider');
+    const thresholdVal = document.getElementById('threshold-val');
+    const thresholdLine = document.getElementById('threshold-line');
+    const thresholdText = document.getElementById('threshold-text');
+    const activeCustKpi = document.getElementById('kpi-active-cust');
+    const churnRateKpi = document.getElementById('kpi-churn-rate');
+    const activeCustIndicator = document.getElementById('kpi-active-indicator');
+    const churnRateIndicator = document.getElementById('kpi-churn-indicator');
+
+    if (thresholdSlider) {
+        thresholdSlider.addEventListener('input', () => {
+            const threshold = parseFloat(thresholdSlider.value);
+            
+            // Update threshold number text label
+            thresholdVal.textContent = threshold.toFixed(2);
+            
+            // Update threshold line in SVG (X range: 60 to 460)
+            const xPos = 60 + threshold * 400;
+            if (thresholdLine) {
+                thresholdLine.setAttribute('x1', xPos);
+                thresholdLine.setAttribute('x2', xPos);
+            }
+            if (thresholdText) {
+                thresholdText.setAttribute('x', xPos + 10);
+                thresholdText.textContent = `Threshold (${threshold.toFixed(2)})`;
+                
+                // Adjust label side if getting too close to the right edge
+                if (xPos > 380) {
+                    thresholdText.setAttribute('x', xPos - 95);
+                }
             }
             
-            rotate(ax, ay) {
-                // Rotate around X-axis
-                let cosX = Math.cos(ax);
-                let sinX = Math.sin(ax);
-                let y1 = this.y * cosX - this.z * sinX;
-                let z1 = this.z * cosX + this.y * sinX;
-                
-                // Rotate around Y-axis
-                let cosY = Math.cos(ay);
-                let sinY = Math.sin(ay);
-                let x2 = this.x * cosY - z1 * sinY;
-                let z2 = z1 * cosY + this.x * sinY;
-                
-                this.x = x2;
-                this.y = y1;
-                this.z = z2;
+            // Calculate dynamic Churn Rate: at 0.50 it is 18.2%
+            // Formula: churnRate = (0.95 - threshold) * 0.3 + 0.047
+            const churnRate = (0.95 - threshold) * 0.3 + 0.047;
+            const churnPercentage = (churnRate * 100).toFixed(1);
+            if (churnRateKpi) {
+                churnRateKpi.textContent = `${churnPercentage}%`;
             }
             
-            draw(width, height) {
-                // 3D Perspective Projection
-                const focus = 300;
-                const scale = focus / (focus + this.z);
-                const x2d = this.x * scale + width / 2;
-                const y2d = this.y * scale + height / 2;
-                
-                // Opacity based on depth
-                const opacity = (focus - this.z) / (focus + radius);
-                if (opacity < 0.15) return; // don't draw far items
-                
-                sCtx.save();
-                sCtx.font = `bold ${Math.round(scale * 15 + 8)}px 'Outfit', sans-serif`;
-                sCtx.fillStyle = this.color;
-                sCtx.globalAlpha = opacity;
-                sCtx.textAlign = 'center';
-                sCtx.textBaseline = 'middle';
-                
-                // Render shadow for glow effect
-                sCtx.shadowBlur = 10;
-                sCtx.shadowColor = 'rgba(0, 242, 254, 0.4)';
-                
-                sCtx.fillText(this.text, x2d, y2d);
-                sCtx.restore();
+            // Calculate dynamic Active Customers: at 0.50 it is 12,450
+            const totalCustomers = 15220;
+            const activeCust = Math.round(totalCustomers * (1 - churnRate));
+            if (activeCustKpi) {
+                activeCustKpi.textContent = activeCust.toLocaleString();
             }
-        }
-        
-        // Initialize coordinates evenly distributed on a sphere (Fibonacci lattice)
-        const numTags = skillList.length;
-        for (let i = 0; i < numTags; i++) {
-            const phi = Math.acos(-1 + (2 * i) / numTags);
-            const theta = Math.sqrt(numTags * Math.PI) * phi;
-            
-            const tx = radius * Math.sin(phi) * Math.cos(theta);
-            const ty = radius * Math.sin(phi) * Math.sin(theta);
-            const tz = radius * Math.cos(phi);
-            
-            tags.push(new Tag(skillList[i], tx, ty, tz));
-        }
-        
-        // Control rotation based on mouse coordinates relative to center
-        skillsCanvas.addEventListener('mousemove', (e) => {
-            if (isDragging) return;
-            const rect = skillsCanvas.getBoundingClientRect();
-            const mx = e.clientX - rect.left - rect.width / 2;
-            const my = e.clientY - rect.top - rect.height / 2;
-            
-            // Adjust speed dynamically
-            angleY = mx * 0.00003;
-            angleX = -my * 0.00003;
-        });
-        
-        // Click-Drag controls
-        skillsCanvas.addEventListener('mousedown', (e) => {
-            isDragging = true;
-            lastMouseX = e.clientX;
-            lastMouseY = e.clientY;
-        });
-        
-        window.addEventListener('mouseup', () => {
-            isDragging = false;
-        });
-        
-        window.addEventListener('mousemove', (e) => {
-            if (!isDragging) return;
-            const dx = e.clientX - lastMouseX;
-            const dy = e.clientY - lastMouseY;
-            
-            angleY = dx * 0.005;
-            angleX = -dy * 0.005;
-            
-            lastMouseX = e.clientX;
-            lastMouseY = e.clientY;
-        });
-        
-        // Touch supports
-        skillsCanvas.addEventListener('touchstart', (e) => {
-            isDragging = true;
-            lastMouseX = e.touches[0].clientX;
-            lastMouseY = e.touches[0].clientY;
-        });
-        
-        skillsCanvas.addEventListener('touchend', () => {
-            isDragging = false;
-        });
-        
-        skillsCanvas.addEventListener('touchmove', (e) => {
-            if (!isDragging) return;
-            const dx = e.touches[0].clientX - lastMouseX;
-            const dy = e.touches[0].clientY - lastMouseY;
-            
-            angleY = dx * 0.008;
-            angleX = -dy * 0.008;
-            
-            lastMouseX = e.touches[0].clientX;
-            lastMouseY = e.touches[0].clientY;
-        });
-        
-        // Main Loop
-        function drawSphere() {
-            sCtx.clearRect(0, 0, skillsCanvas.width, skillsCanvas.height);
-            
-            // Rotate tags
-            tags.forEach(tag => {
-                tag.rotate(angleX, angleY);
-                tag.draw(skillsCanvas.width, skillsCanvas.height);
-            });
-            
-            // Decelerate drag rotation back to smooth drift speed
-            if (!isDragging) {
-                angleX += (0.001 - angleX) * 0.05;
-                angleY += (0.001 - angleY) * 0.05;
+
+            // Update Churn Indicator styling and text
+            if (churnRateIndicator) {
+                if (churnRate > 0.20) {
+                    churnRateIndicator.className = 'kpi-indicator negative';
+                    churnRateIndicator.innerHTML = `<i class="fa-solid fa-arrow-trend-up"></i> High Churn`;
+                } else if (churnRate < 0.12) {
+                    churnRateIndicator.className = 'kpi-indicator positive';
+                    churnRateIndicator.innerHTML = `<i class="fa-solid fa-arrow-trend-down"></i> Low Churn`;
+                } else {
+                    churnRateIndicator.className = 'kpi-indicator neutral';
+                    churnRateIndicator.innerHTML = `<i class="fa-solid fa-equals"></i> Steady`;
+                }
             }
-            
-            requestAnimationFrame(drawSphere);
-        }
-        
-        drawSphere();
+
+            // Update Active Customers MoM growth indicator dynamically
+            if (activeCustIndicator) {
+                const growthRate = ((activeCust - 11830) / 11830 * 100).toFixed(1);
+                if (growthRate > 0) {
+                    activeCustIndicator.className = 'kpi-indicator positive';
+                    activeCustIndicator.innerHTML = `<i class="fa-solid fa-arrow-trend-up"></i> +${growthRate}% MoM`;
+                } else {
+                    activeCustIndicator.className = 'kpi-indicator negative';
+                    activeCustIndicator.innerHTML = `<i class="fa-solid fa-arrow-trend-down"></i> ${growthRate}% MoM`;
+                }
+            }
+        });
     }
 
     // ==========================================
