@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rohit Rathod | Portfolio - Aspiring Data Analyst</title>
+    <meta name="description" content="Portfolio of Rohit Rathod, an Aspiring Data Analyst with expertise in SQL, Python, Power BI, and Machine Learning.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Canvas for Particles -->
+    <canvas id="hero-particles"></canvas>
+
+    <!-- Header / Navigation -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span class="logo-accent">&lt;</span>Rohit<span class="logo-accent">.</span>Rathod<span class="logo-accent"> /&gt;</span>
+            </a>
+            <nav class="nav-menu">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#sandbox" class="nav-link">Analytics Sandbox</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="resume.pdf" download="Rohit_Rathod_Resume.pdf" class="btn btn-outline nav-btn"><i class="fa-solid fa-download"></i> Resume</a>
+                <a href="#contact" class="btn btn-primary nav-btn">Contact</a>
+            </nav>
+            <div class="mobile-menu-toggle">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav-overlay">
+        <div class="mobile-nav-menu">
+            <a href="#about" class="mobile-nav-link">About</a>
+            <a href="#skills" class="mobile-nav-link">Skills</a>
+            <a href="#projects" class="mobile-nav-link">Projects</a>
+            <a href="#sandbox" class="mobile-nav-link">Analytics Sandbox</a>
+            <a href="#experience" class="mobile-nav-link">Experience</a>
+            <a href="resume.pdf" download="Rohit_Rathod_Resume.pdf" class="btn btn-outline" style="margin-bottom: 1rem; width: 100%;"><i class="fa-solid fa-download"></i> Resume PDF</a>
+            <a href="#contact" class="btn btn-primary" style="width: 100%;">Get In Touch</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="badge">Available for Junior Data Analyst Roles</div>
+                <h1 class="hero-title">
+                    Hi, I'm <span class="highlight">Rohit Rathod</span>
+                </h1>
+                <h2 class="hero-subtitle">
+                    I translate raw data into <span class="text-rotator" data-words='["Actionable Insights", "Interactive Dashboards", "Automated Pipelines", "Business Value"]'>Actionable Insights</span>
+                </h2>
+                <p class="hero-description">
+                    Data Science graduate specializing in Python ETL pipelines, SQL querying, and Power BI visualization. Passionate about uncovering stories hidden within complex datasets.
+                </p>
+                <div class="hero-ctas">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="resume.pdf" download="Rohit_Rathod_Resume.pdf" class="btn btn-outline"><i class="fa-solid fa-download"></i> Download Resume</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/Rohittt619" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://linkedin.com/in/rohit-rathod-" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="mailto:rrathod1101@gmail.com" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <!-- Glowing Orb Representation -->
+                <div class="orb-container">
+                    <div class="glow-orb primary-orb"></div>
+                    <div class="glow-orb secondary-orb"></div>
+                    <div class="glow-orb tertiary-orb"></div>
+                    <div class="orb-overlay">
+                        <i class="fa-solid fa-chart-pie orb-icon"></i>
+                        <div class="orb-ring"></div>
+                        <div class="orb-ring secondary"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about section-padding" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Overview</span>
+                <h2 class="section-title">About Me</h2>
+                <div class="section-underline"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p class="lead">
+                        I am a detail-oriented Data Science graduate with a CGPA of 8.29, combining solid theoretical knowledge with hands-on technical skills.
+                    </p>
+                    <p>
+                        My journey in data science has taught me that data is only as good as the decisions it enables. Through my academic coursework, personal projects, and developer internships, I have focused on building end-to-end analytical solutions—from writing Python scripts that clean messy web data, to structuring relational tables in SQL databases, and designing intuitive dashboard layouts in Power BI that tell a clear business story.
+                    </p>
+                    <p>
+                        I love automation and efficiency. During my internships, I managed to reduce manual reporting efforts by 30% using custom automation scripts. I am looking forward to bringing this analytical mindset and technical toolkit to a fast-paced team as a Junior Data Analyst.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat-card">
+                            <span class="stat-number" data-target="8.29">0</span>
+                            <span class="stat-label">CGPA (B.Tech IT)</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number" data-target="30">0</span><span class="stat-suffix">%</span>
+                            <span class="stat-label">Reporting Efficiency Gain</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number" data-target="6">0</span><span class="stat-suffix">+</span>
+                            <span class="stat-label">Public Repositories</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-cards">
+                    <div class="about-info-card">
+                        <div class="card-icon"><i class="fa-solid fa-code"></i></div>
+                        <h3>Analytical Mindset</h3>
+                        <p>Converting unorganized data records into structured, queryable schemas using advanced SQL (CTEs, Window Functions).</p>
+                    </div>
+                    <div class="about-info-card">
+                        <div class="card-icon"><i class="fa-solid fa-chart-line"></i></div>
+                        <h3>Visual Storytelling</h3>
+                        <p>Creating interactive dashboards in Power BI that allow business leaders to filter, drill down, and extract insights at a glance.</p>
+                    </div>
+                    <div class="about-info-card">
+                        <div class="card-icon"><i class="fa-solid fa-robot"></i></div>
+                        <h3>Automation & ML</h3>
+                        <p>Writing reusable Python pipelines (Pandas/NumPy) to clean datasets and deploying sentiment/classification models via Streamlit.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section (Includes 3D Rotating Tag Cloud) -->
+    <section class="skills section-padding" id="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Toolkit</span>
+                <h2 class="section-title">Technical Expertise</h2>
+                <div class="section-underline"></div>
+            </div>
+            <div class="skills-grid">
+                <div class="skills-sphere-container">
+                    <h3>Interactive 3D Skills Sphere</h3>
+                    <p class="skills-sphere-subtext">Click and drag to rotate the sphere or hover to inspect specific skills.</p>
+                    <div class="canvas-wrapper">
+                        <!-- Canvas for 3D Tag Cloud -->
+                        <canvas id="skills-cloud-canvas" width="400" height="400"></canvas>
+                    </div>
+                </div>
+                <div class="skills-categories">
+                    <div class="skills-category">
+                        <h4 class="category-title"><i class="fa-solid fa-laptop-code"></i> Languages & Frameworks</h4>
+                        <div class="skills-tags">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">Bash</span>
+                            <span class="skill-tag">Pandas</span>
+                            <span class="skill-tag">NumPy</span>
+                            <span class="skill-tag">Scikit-learn</span>
+                        </div>
+                    </div>
+                    <div class="skills-category">
+                        <h4 class="category-title"><i class="fa-solid fa-database"></i> Databases & Storage</h4>
+                        <div class="skills-tags">
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">PostgreSQL</span>
+                            <span class="skill-tag">Star Schema</span>
+                            <span class="skill-tag">Data Modeling</span>
+                        </div>
+                    </div>
+                    <div class="skills-category">
+                        <h4 class="category-title"><i class="fa-solid fa-chart-column"></i> Data Visualization & BI</h4>
+                        <div class="skills-tags">
+                            <span class="skill-tag">Power BI</span>
+                            <span class="skill-tag">DAX</span>
+                            <span class="skill-tag">Power Query</span>
+                            <span class="skill-tag">Excel (VLOOKUP/Pivot)</span>
+                        </div>
+                    </div>
+                    <div class="skills-category">
+                        <h4 class="category-title"><i class="fa-solid fa-box-open"></i> Tools, Cloud & Dev</h4>
+                        <div class="skills-tags">
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">GitHub</span>
+                            <span class="skill-tag">VS Code</span>
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Streamlit</span>
+                            <span class="skill-tag">AWS</span>
+                            <span class="skill-tag">Azure</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section (3D Tilt Cards) -->
+    <section class="projects section-padding" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Portfolio</span>
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="section-underline"></div>
+            </div>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card-wrapper">
+                    <div class="project-card" data-tilt>
+                        <div class="project-card-inner">
+                            <div class="project-image-placeholder">
+                                <i class="fa-solid fa-circle-check project-main-icon"></i>
+                                <div class="project-tech-badges">
+                                    <span class="tech-badge">Gemini API</span>
+                                    <span class="tech-badge">Streamlit</span>
+                                    <span class="tech-badge">NLP</span>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-card-title">HireSense-AI — Resume & ATS Analyzer</h3>
+                                <p class="project-card-desc">
+                                    An AI-powered application that parses PDF resumes and evaluates text alignment against target job descriptions using the Google Gemini API. It detects keyword gaps, evaluates formatting, and quantifies impact statements to deliver optimization feedback.
+                                </p>
+                                <div class="project-links">
+                                    <a href="https://github.com/Rohittt619" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> Source Code</a>
+                                    <a href="#" target="_blank" class="project-link demo-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card-wrapper">
+                    <div class="project-card" data-tilt>
+                        <div class="project-card-inner">
+                            <div class="project-image-placeholder dashboard-bg">
+                                <i class="fa-solid fa-chart-line project-main-icon"></i>
+                                <div class="project-tech-badges">
+                                    <span class="tech-badge">Python</span>
+                                    <span class="tech-badge">Power BI</span>
+                                    <span class="tech-badge">DAX</span>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-card-title">Sales EDA & Power BI Dashboard</h3>
+                                <p class="project-card-desc">
+                                    Exploratory data analysis performed in Python on over 10,000+ sales transactions. The cleaned data was structured into a Star Schema and imported into Power BI to build an interactive KPI dashboard tracking year-over-year sales growth and discount impacts.
+                                </p>
+                                <div class="project-links">
+                                    <a href="https://github.com/Rohittt619" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> Source Code</a>
+                                    <a href="#" class="project-link scroll-to-sandbox"><i class="fa-solid fa-desktop"></i> View Mockup Below</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card-wrapper">
+                    <div class="project-card" data-tilt>
+                        <div class="project-card-inner">
+                            <div class="project-image-placeholder sql-bg">
+                                <i class="fa-solid fa-database project-main-icon"></i>
+                                <div class="project-tech-badges">
+                                    <span class="tech-badge">MySQL</span>
+                                    <span class="tech-badge">CTEs</span>
+                                    <span class="tech-badge">Window Functions</span>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-card-title">SQL Business Analytics Case Studies</h3>
+                                <p class="project-card-desc">
+                                    A structured repository solving 15 business case studies on retail databases. Showcases writing production-level SQL queries utilizing CTEs, window functions (DENSE_RANK, LEAD, LAG), and multi-table joins to compute metrics like customer retention rates.
+                                </p>
+                                <div class="project-links">
+                                    <a href="https://github.com/Rohittt619" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> Source Code</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="other-projects-header">
+                <h3>Other Selected Projects</h3>
+            </div>
+            
+            <div class="other-projects-grid">
+                <div class="other-project-card">
+                    <div class="op-icon"><i class="fa-solid fa-users"></i></div>
+                    <h4>Customer Churn Analysis</h4>
+                    <p>Built a machine learning classification pipeline achieving ~82% accuracy and 0.87 ROC-AUC score using Gradient Boosting algorithms to predict customer churn risk.</p>
+                    <a href="https://github.com/Rohittt619" target="_blank" class="op-link"><i class="fa-brands fa-github"></i> View Repo</a>
+                </div>
+                <div class="other-project-card">
+                    <div class="op-icon"><i class="fa-solid fa-house"></i></div>
+                    <h4>House Price Prediction</h4>
+                    <p>Developed a regression model estimating California housing values based on income and geographic features, deployed as an interactive Streamlit app.</p>
+                    <a href="https://github.com/Rohittt619" target="_blank" class="op-link"><i class="fa-brands fa-github"></i> View Repo</a>
+                </div>
+                <div class="other-project-card">
+                    <div class="op-icon"><i class="fa-brands fa-twitter"></i></div>
+                    <h4>Twitter Sentiment Analysis</h4>
+                    <p>Built a text classification pipeline using Python, Scikit-learn (SVM), and TF-IDF representation to categorize tweets into positive, negative, and neutral classes.</p>
+                    <a href="https://github.com/Rohittt619" target="_blank" class="op-link"><i class="fa-brands fa-github"></i> View Repo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Interactive Mini-Dashboard Section (Analytics Sandbox) -->
+    <section class="sandbox section-padding" id="sandbox">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Interactive Demo</span>
+                <h2 class="section-title">Live Analytics Sandbox</h2>
+                <div class="section-underline"></div>
+            </div>
+            <div class="sandbox-intro">
+                <p>To showcase my skills in custom data visualization and interactive tool design, I built this mini analytics dashboard. Toggle between datasets to see real-time chart rendering and metric calculations.</p>
+            </div>
+            
+            <div class="sandbox-dashboard">
+                <div class="dashboard-controls">
+                    <button class="db-tab-btn active" data-dashboard="sales">
+                        <i class="fa-solid fa-wallet"></i> Sales Performance Overview
+                    </button>
+                    <button class="db-tab-btn" data-dashboard="churn">
+                        <i class="fa-solid fa-user-slash"></i> Customer Churn Analysis
+                    </button>
+                </div>
+                
+                <div class="dashboard-body">
+                    <!-- Sales View -->
+                    <div class="dashboard-view active" id="sales-view">
+                        <div class="kpi-row">
+                            <div class="kpi-card-mini">
+                                <span class="kpi-title">Total Revenue</span>
+                                <span class="kpi-value">$248,390</span>
+                                <span class="kpi-indicator positive"><i class="fa-solid fa-arrow-trend-up"></i> +14.2% YoY</span>
+                            </div>
+                            <div class="kpi-card-mini">
+                                <span class="kpi-title">Transactions</span>
+                                <span class="kpi-value" id="kpi-transactions">10,245</span>
+                                <span class="kpi-indicator positive"><i class="fa-solid fa-arrow-trend-up"></i> +8.5% YoY</span>
+                            </div>
+                            <div class="kpi-card-mini">
+                                <span class="kpi-title">Average Order Value</span>
+                                <span class="kpi-value">$24.25</span>
+                                <span class="kpi-indicator negative"><i class="fa-solid fa-arrow-trend-down"></i> -1.2% YoY</span>
+                            </div>
+                            <div class="kpi-card-mini">
+                                <span class="kpi-title">Avg Discount Rate</span>
+                                <span class="kpi-value">12.4%</span>
+                                <span class="kpi-indicator neutral"><i class="fa-solid fa-equals"></i> Steady</span>
+                            </div>
+                        </div>
+                        
+                        <div class="chart-row">
+                            <div class="chart-container-card">
+                                <h4>Monthly Revenue (USD)</h4>
+                                <div class="chart-wrapper-svg">
+                                    <svg viewBox="0 0 500 200" width="100%" height="100%" class="svg-chart">
+                                        <!-- Y Axis Gridlines -->
+                                        <line x1="40" y1="20" x2="480" y2="20" class="gridline"></line>
+                                        <line x1="40" y1="70" x2="480" y2="70" class="gridline"></line>
+                                        <line x1="40" y1="120" x2="480" y2="120" class="gridline"></line>
+                                        <line x1="40" y1="170" x2="480" y2="170" class="gridline"></line>
+                                        
+                                        <!-- Y Axis Labels -->
+                                        <text x="30" y="25" class="chart-text label-align-right">$30k</text>
+                                        <text x="30" y="75" class="chart-text label-align-right">$20k</text>
+                                        <text x="30" y="125" class="chart-text label-align-right">$10k</text>
+                                        <text x="30" y="175" class="chart-text label-align-right">$0</text>
+                                        
+                                        <!-- Bars for Revenue -->
+                                        <rect x="65" y="90" width="30" height="80" rx="3" class="chart-bar-rect anim-bar"></rect>
+                                        <rect x="135" y="70" width="30" height="100" rx="3" class="chart-bar-rect anim-bar" style="animation-delay: 0.1s;"></rect>
+                                        <rect x="205" y="50" width="30" height="120" rx="3" class="chart-bar-rect anim-bar" style="animation-delay: 0.2s;"></rect>
+                                        <rect x="275" y="60" width="30" height="110" rx="3" class="chart-bar-rect anim-bar" style="animation-delay: 0.3s;"></rect>
+                                        <rect x="345" y="40" width="30" height="130" rx="3" class="chart-bar-rect anim-bar" style="animation-delay: 0.4s;"></rect>
+                                        <rect x="415" y="25" width="30" height="145" rx="3" class="chart-bar-rect anim-bar" style="animation-delay: 0.5s;"></rect>
+                                        
+                                        <!-- X Axis Labels -->
+                                        <text x="80" y="192" class="chart-text text-center">Jan</text>
+                                        <text x="150" y="192" class="chart-text text-center">Feb</text>
+                                        <text x="220" y="192" class="chart-text text-center">Mar</text>
+                                        <text x="290" y="192" class="chart-text text-center">Apr</text>
+                                        <text x="360" y="192" class="chart-text text-center">May</text>
+                                        <text x="430" y="192" class="chart-text text-center">Jun</text>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="chart-container-card">
+                                <h4>Sales & Discount Correlation</h4>
+                                <div class="chart-wrapper-svg">
+                                    <svg viewBox="0 0 500 200" width="100%" height="100%" class="svg-chart">
+                                        <!-- Grid lines -->
+                                        <line x1="40" y1="20" x2="480" y2="20" class="gridline"></line>
+                                        <line x1="40" y1="95" x2="480" y2="95" class="gridline"></line>
+                                        <line x1="40" y1="170" x2="480" y2="170" class="gridline"></line>
+                                        
+                                        <!-- Labels -->
+                                        <text x="30" y="25" class="chart-text">High</text>
+                                        <text x="30" y="98" class="chart-text">Mid</text>
+                                        <text x="30" y="175" class="chart-text">Low</text>
+                                        
+                                        <!-- Trendline -->
+                                        <path d="M 65 150 L 135 120 L 205 130 L 275 80 L 345 90 L 415 40" fill="none" class="chart-trendline anim-path"></path>
+                                        
+                                        <!-- Data Points -->
+                                        <circle cx="65" cy="150" r="5" class="chart-point anim-point"></circle>
+                                        <circle cx="135" cy="120" r="5" class="chart-point anim-point" style="animation-delay: 0.1s;"></circle>
+                                        <circle cx="205" cy="130" r="5" class="chart-point anim-point" style="animation-delay: 0.2s;"></circle>
+                                        <circle cx="275" cy="80" r="5" class="chart-point anim-point" style="animation-delay: 0.3s;"></circle>
+                                        <circle cx="345" cy="90" r="5" class="chart-point anim-point" style="animation-delay: 0.4s;"></circle>
+                                        <circle cx="415" cy="40" r="5" class="chart-point anim-point" style="animation-delay: 0.5s;"></circle>
+                                        
+                                        <!-- X Axis Labels -->
+                                        <text x="65" y="192" class="chart-text text-center">0% Disc</text>
+                                        <text x="135" y="192" class="chart-text text-center">5% Disc</text>
+                                        <text x="205" y="192" class="chart-text text-center">10% Disc</text>
+                                        <text x="275" y="192" class="chart-text text-center">15% Disc</text>
+                                        <text x="345" y="192" class="chart-text text-center">20% Disc</text>
+                                        <text x="415" y="192" class="chart-text text-center">25% Disc</text>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Churn View -->
+                    <div class="dashboard-view" id="churn-view">
+                        <div class="kpi-row">
+                            <div class="kpi-card-mini">
+                                <span class="kpi-title">Active Customers</span>
+                                <span class="kpi-value">12,450</span>
+                                <span class="kpi-indicator positive"><i class="fa-solid fa-arrow-trend-up"></i> +5.2% MoM</span>
+                            </div>
+                            <div class="kpi-card-mini text-warning-glow">
+                                <span class="kpi-title">Overall Churn Rate</span>
+                                <span class="kpi-value">18.2%</span>
+                                <span class="kpi-indicator negative"><i class="fa-solid fa-arrow-trend-up"></i> +1.4% Churn</span>
+                            </div>
+                            <div class="kpi-card-mini">
+                                <span class="kpi-title">Model Churn ROC-AUC</span>
+                                <span class="kpi-value">0.87</span>
+                                <span class="kpi-indicator positive"><i class="fa-solid fa-circle-check"></i> High Quality</span>
+                            </div>
+                            <div class="kpi-card-mini">
+                                <span class="kpi-title">Model Accuracy</span>
+                                <span class="kpi-value">82.0%</span>
+                                <span class="kpi-indicator positive"><i class="fa-solid fa-circle-check"></i> Gradient Boost</span>
+                            </div>
+                        </div>
+                        
+                        <div class="chart-row">
+                            <div class="chart-container-card">
+                                <h4>Churn Probability Distribution</h4>
+                                <div class="chart-wrapper-svg">
+                                    <svg viewBox="0 0 500 200" width="100%" height="100%" class="svg-chart">
+                                        <!-- Grid lines -->
+                                        <line x1="40" y1="20" x2="480" y2="20" class="gridline"></line>
+                                        <line x1="40" y1="70" x2="480" y2="70" class="gridline"></line>
+                                        <line x1="40" y1="120" x2="480" y2="120" class="gridline"></line>
+                                        <line x1="40" y1="170" x2="480" y2="170" class="gridline"></line>
+                                        
+                                        <!-- Labels -->
+                                        <text x="30" y="25" class="chart-text">4k</text>
+                                        <text x="30" y="75" class="chart-text">2.5k</text>
+                                        <text x="30" y="125" class="chart-text">1k</text>
+                                        <text x="30" y="175" class="chart-text">0</text>
+                                        
+                                        <!-- Distribution Curve -->
+                                        <path d="M 40 170 C 120 170, 160 30, 220 30 C 280 30, 320 150, 480 170" fill="none" class="chart-curve anim-path"></path>
+                                        
+                                        <!-- Threshold line -->
+                                        <line x1="320" y1="20" x2="320" y2="170" stroke="#ff4757" stroke-dasharray="4" stroke-width="2"></line>
+                                        <text x="330" y="35" fill="#ff4757" font-size="10px" font-weight="600">Churn Threshold (0.5)</text>
+                                        
+                                        <!-- X Axis Labels -->
+                                        <text x="60" y="192" class="chart-text text-center">0.0 (Safe)</text>
+                                        <text x="170" y="192" class="chart-text text-center">0.3</text>
+                                        <text x="280" y="192" class="chart-text text-center">0.6</text>
+                                        <text x="390" y="192" class="chart-text text-center">0.8 (Risk)</text>
+                                        <text x="460" y="192" class="chart-text text-center">1.0</text>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="chart-container-card">
+                                <h4>Key Risk Factors Impact</h4>
+                                <div class="chart-wrapper-svg">
+                                    <svg viewBox="0 0 500 200" width="100%" height="100%" class="svg-chart">
+                                        <!-- Grid lines -->
+                                        <line x1="120" y1="20" x2="120" y2="180" class="gridline"></line>
+                                        <line x1="240" y1="20" x2="240" y2="180" class="gridline"></line>
+                                        <line x1="360" y1="20" x2="360" y2="180" class="gridline"></line>
+                                        <line x1="470" y1="20" x2="470" y2="180" class="gridline"></line>
+                                        
+                                        <!-- Factor Bars (Horizontal) -->
+                                        <text x="110" y="45" class="chart-text label-align-right font-size-11">Contract Type</text>
+                                        <rect x="120" y="32" width="310" height="18" rx="3" fill="url(#gradient-cyan)" class="anim-bar-h"></rect>
+                                        
+                                        <text x="110" y="85" class="chart-text label-align-right font-size-11">Tech Support</text>
+                                        <rect x="120" y="72" width="240" height="18" rx="3" fill="url(#gradient-cyan)" class="anim-bar-h" style="animation-delay: 0.15s;"></rect>
+                                        
+                                        <text x="110" y="125" class="chart-text label-align-right font-size-11">Tenure &lt; 1yr</text>
+                                        <rect x="120" y="112" width="200" height="18" rx="3" fill="url(#gradient-cyan)" class="anim-bar-h" style="animation-delay: 0.3s;"></rect>
+                                        
+                                        <text x="110" y="165" class="chart-text label-align-right font-size-11">Payment Method</text>
+                                        <rect x="120" y="152" width="140" height="18" rx="3" fill="url(#gradient-cyan)" class="anim-bar-h" style="animation-delay: 0.45s;"></rect>
+                                        
+                                        <!-- X Axis Labels -->
+                                        <text x="120" y="195" class="chart-text text-center">0</text>
+                                        <text x="240" y="195" class="chart-text text-center">0.25</text>
+                                        <text x="360" y="195" class="chart-text text-center">0.50</text>
+                                        <text x="470" y="195" class="chart-text text-center">0.75+</text>
+                                        
+                                        <defs>
+                                            <linearGradient id="gradient-cyan" x1="0%" y1="0%" x2="100%" y2="0%">
+                                                <stop offset="0%" stop-color="#4facfe"></stop>
+                                                <stop offset="100%" stop-color="#00f2fe"></stop>
+                                            </linearGradient>
+                                        </defs>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section (Timeline) -->
+    <section class="experience section-padding" id="experience">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Career Journey</span>
+                <h2 class="section-title">Work Experience</h2>
+                <div class="section-underline"></div>
+            </div>
+            
+            <div class="timeline">
+                <!-- Timeline Item 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Data Science Intern</h3>
+                        <span class="timeline-company">Pune, Maharashtra (NLP & Sentiment Focus)</span>
+                        <p class="timeline-desc">
+                            Designed and deployed sentiment-analysis pipeline processing 1,000+ social media feedback records using Python, TF-IDF, SVM, and Logistic Regression. Performed text tokenization, lemmatization, and stop-word removal, improving classification accuracy to 85% and significantly reducing noise in operational data.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Python Developer Intern</h3>
+                        <span class="timeline-company">Pune, Maharashtra (Automation & Pipelines)</span>
+                        <p class="timeline-desc">
+                            Automated repetitive reporting workflows and spreadsheet consolidation using Python (Pandas/NumPy) and SQL, reducing manual data-processing cycles by 30%. Built reusable preprocessing pipelines to clean structured datasets, handle outliers, and containerized an object-detection model using YOLOv5 and Docker for local deployment test environments.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certifications & Achievements -->
+            <div class="education-certifications-row">
+                <div class="edu-column">
+                    <h3 class="subsection-title"><i class="fa-solid fa-graduation-cap"></i> Education</h3>
+                    <div class="education-card">
+                        <h4>B.Tech in IT (Data Science)</h4>
+                        <p class="school">Ajeenkya DY Patil University, Pune</p>
+                        <p class="meta">CGPA: 8.29 | 2021 - 2025</p>
+                    </div>
+                    <div class="education-card">
+                        <h4>HSC (Science)</h4>
+                        <p class="school">Royal College of Science, Thane</p>
+                        <p class="meta">Percentage: 86.67% | 2021</p>
+                    </div>
+                </div>
+                <div class="cert-column">
+                    <h3 class="subsection-title"><i class="fa-solid fa-award"></i> Certifications & Highlights</h3>
+                    <ul class="cert-list">
+                        <li>
+                            <span class="cert-title">SQL for Data Science</span>
+                            <span class="cert-issuer">UC Davis (Coursera)</span>
+                        </li>
+                        <li>
+                            <span class="cert-title">Databases & SQL with Python</span>
+                            <span class="cert-issuer">IBM (Coursera)</span>
+                        </li>
+                        <li>
+                            <span class="cert-title">Excel Skills for Business</span>
+                            <span class="cert-issuer">Macquarie University (Coursera)</span>
+                        </li>
+                        <li>
+                            <span class="cert-title">AWS Cloud Fundamentals</span>
+                            <span class="cert-issuer">Infosys</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact section-padding" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Get in touch</span>
+                <h2 class="section-title">Contact Me</h2>
+                <div class="section-underline"></div>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Let's collaborate!</h3>
+                    <p>I am actively seeking Junior Data Analyst roles in Pune, Mumbai, or remote positions. If you'd like to discuss a project, interview, or just chat about data, feel free to reach out.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-detail-item">
+                            <div class="icon-box"><i class="fa-solid fa-envelope"></i></div>
+                            <div>
+                                <span>Email Me</span>
+                                <a href="mailto:rrathod1101@gmail.com">rrathod1101@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-detail-item">
+                            <div class="icon-box"><i class="fa-solid fa-phone"></i></div>
+                            <div>
+                                <span>Call Me</span>
+                                <a href="tel:+917710897843">+91 7710897843</a>
+                            </div>
+                        </div>
+                        <div class="contact-detail-item">
+                            <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
+                            <div>
+                                <span>Location</span>
+                                <p>Pune & Mumbai, Maharashtra, India</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container">
+                    <form id="contact-form" class="contact-form" onsubmit="event.preventDefault(); alert('Message sent! Thanks for reaching out.');">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" required placeholder="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" required placeholder="john@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" rows="5" required placeholder="How can I help you?"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Send Message <i class="fa-solid fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2026 Rohit Rathod. All Rights Reserved.</p>
+            <p class="footer-design">Designed & Built with <i class="fa-solid fa-heart" style="color: #ff4757;"></i> for Data Excellence.</p>
+            <div class="social-links footer-socials">
+                <a href="https://github.com/Rohittt619" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="https://linkedin.com/in/rohit-rathod-" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="mailto:rrathod1101@gmail.com"><i class="fa-regular fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script File -->
+    <script src="script.js"></script>
+</body>
+</html>
