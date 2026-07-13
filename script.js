@@ -394,29 +394,4 @@ document.addEventListener('DOMContentLoaded', () => {
     if (statsSection) {
         observer.observe(statsSection);
     }
-
-    // ==========================================
-    // 8. Contact Form Templates
-    // ==========================================
-    const tempBtns = document.querySelectorAll('.template-btn');
-    const msgInput = document.getElementById('message');
-    
-    if (msgInput && tempBtns.length > 0) {
-        const templates = {
-            hiring: "Hi Rohit,\n\nI saw your portfolio and would love to discuss an open role on our team. Let's schedule a time to connect!",
-            collab: "Hi Rohit,\n\nI have a project idea involving data pipelines/dashboards and would love to collaborate with you.",
-            network: "Hi Rohit,\n\nI'd love to connect, share insights, and chat about recent trends in data science and analytics!"
-        };
-        
-        tempBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Toggle active style
-                tempBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                
-                const type = btn.getAttribute('data-template');
-                msgInput.value = templates[type];
-            });
-        });
-    }
 });

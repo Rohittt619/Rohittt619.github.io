@@ -438,7 +438,6 @@ header.scrolled {
     filter: blur(40px);
     opacity: 0.4;
     mix-blend-mode: screen;
-    animation: float-orb 12s infinite alternate ease-in-out;
 }
 
 .primary-orb {
@@ -490,7 +489,6 @@ header.scrolled {
     background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: float 4s infinite ease-in-out;
 }
 
 .orb-ring {
@@ -501,7 +499,6 @@ header.scrolled {
     bottom: -20px;
     border: 2px dashed rgba(0, 242, 254, 0.4);
     border-radius: 50%;
-    animation: rotate 20s infinite linear;
 }
 
 .orb-ring.secondary {
@@ -510,7 +507,6 @@ header.scrolled {
     right: -40px;
     bottom: -40px;
     border: 1px solid rgba(79, 172, 254, 0.2);
-    animation: rotate 30s infinite linear reverse;
 }
 
 @keyframes float-orb {
@@ -1547,38 +1543,6 @@ footer p {
     filter: drop-shadow(var(--glow-primary));
 }
 
-/* Contact Template Buttons */
-.template-btns {
-    display: flex;
-    gap: 0.8rem;
-    margin-bottom: 0.5rem;
-    flex-wrap: wrap;
-}
-
-.template-btn {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid var(--border);
-    color: var(--text-muted);
-    padding: 0.5rem 1.1rem;
-    border-radius: 8px;
-    font-family: inherit;
-    font-size: 0.85rem;
-    cursor: pointer;
-    transition: var(--transition-fast);
-}
-
-.template-btn:hover {
-    background: rgba(0, 242, 254, 0.05);
-    border-color: var(--primary);
-    color: #fff;
-}
-
-.template-btn.active {
-    background: linear-gradient(135deg, rgba(0, 242, 254, 0.15) 0%, rgba(79, 172, 254, 0.15) 100%);
-    border-color: var(--primary);
-    color: var(--primary);
-    box-shadow: var(--glow-primary);
-}
 
 /* Responsive Styles */
 @media (max-width: 1024px) {
