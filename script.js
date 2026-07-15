@@ -388,7 +388,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 animateStats();
             }
         });
-    }, { threshold: 0.5 });
+    }, { threshold: 0.1 });
     
     const statsSection = document.querySelector('.about-stats');
     if (statsSection) {
